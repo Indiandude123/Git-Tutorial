@@ -21,3 +21,9 @@ git log --oneline : gives the sha id and the commit message only. Tbh this is th
 git log --stat : gives you the whole history, including the file changes made basically all the details
 
 git show sha_id :will show how the code was looking like at that version.
+
+git diff : shows the changes made in the staging area
+a/filename is the after and b/filename is the before
+
+git checkout sha_id : takes you to that particular version.
+git checkout master: takes you back to your original master branch. In my case I hadn't branched so master took me back to whatever latest version i was working with.
