@@ -27,3 +27,7 @@ a/filename is the after and b/filename is the before
 
 git checkout sha_id : takes you to that particular version.
 git checkout master: takes you back to your original master branch. In my case I hadn't branched so master took me back to whatever latest version i was working with.
+
+git branch branch_name sha_id : creates a branch from that particular commit
+
+git log --oneline --all --graph : this shows the whole structure of the commits in the branch and the master in a graphical manner. Very useful 
