@@ -30,4 +30,8 @@ git checkout master: takes you back to your original master branch. In my case I
 
 git branch branch_name sha_id : creates a branch from that particular commit
 
+git branch : shows the branch, the asterisk shows which branch you're on
+
 git log --oneline --all --graph : this shows the whole structure of the commits in the branch and the master in a graphical manner. Very useful 
+
+git branch -d branch_name : deletes the branch, but make sure your current HEAD is not on the branch you're deleting. So you'll have to come to the master branch to delete the branch
