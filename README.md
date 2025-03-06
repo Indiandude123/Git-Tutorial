@@ -10,3 +10,14 @@ Stages of Git
 - Remote Repo
 
 
+git log : shows you all the commits you have made 
+
+HEAD -> points to the most recent commit on your existing branch
+
+sha id : the unique id for a commit. Using this sha id you can go back and forth in versions or even branch
+
+git log --oneline : gives the sha id and the commit message only. Tbh this is the most useful command because its easy to read
+
+git log --stat : gives you the whole history, including the file changes made basically all the details
+
+git show sha_id :will show how the code was looking like at that version.
