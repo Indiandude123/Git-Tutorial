@@ -1,5 +1,9 @@
 # Git and GitHub
 
+These are what I have learnt by following the playlist by Vikash Das
+https://youtube.com/playlist?list=PLupK5DK91flV45dkPXyGViMLtHadRr6sp&feature=shared
+
+
 ## Introduction
 Git is a **Version Control System (VCS)** or a **Source Code Manager (SCM)** that helps in tracking changes, collaborating with others, and managing non-linear development efficiently.
 
