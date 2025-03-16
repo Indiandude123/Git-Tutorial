@@ -55,3 +55,6 @@ If both branches have modified the same part of a file, a **merge conflict** occ
    ```
 
 
+Working with github:
+`git remote add origin <repository url>` -> your local git will get the address of the remote repo
+`git push origin master/main` -> sends the local repo to the origin
