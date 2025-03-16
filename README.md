@@ -37,3 +37,12 @@ git log --oneline --all --graph : this shows the whole structure of the commits 
 git branch -d branch_name : deletes the branch, but make sure your current HEAD is not on the branch you're deleting. So you'll have to come to the master branch to delete the branch. A thing to notice is this returns an error if this branch is not merged with the master
 
 git branch -D branch_name : deletes it anyway. Then again keep in mind that you'll have to be in the main branch to be able to do this operation.
+
+
+Merge conflicts:
+So i had two branches in total, both having a "helper.py" file. I changed the first line of the file in both these branches. Then i put the head on the master and tried to merge
+git merge branch_name -> this gives an option to choose on how to handle the conflict. 
+CONFLICT (content): Merge conflict in helper2.py
+Automatic merge failed; fix conflicts and then commit the result.
+And 
+
