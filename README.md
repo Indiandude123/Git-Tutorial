@@ -150,6 +150,25 @@ Now, `main` becomes the default and only branch.
 Use **clone** for the initial download and **pull** regularly to keep your local repository updated.
 
 
+## Software Versions and Tagging
+To create a version tag for a specific commit:
+```bash
+git tag -a v1.0.0 <sha_id>
+```
+Git will open Vim to enter a tag annotation message.
 
-Software versions:
-`git tag -a v1.0.0 <sha_id>(optional)` -> creates a version tag for the particular commit having a particular sha_id
+### Steps to Enter a Tag Message in Vim
+1. Press `i` to enter **insert mode**.
+2. Type your tag message (e.g., "First stable release").
+3. Press `ESC`, then type `:wq` and press **Enter** to save and exit.
+
+Example tag message:
+```
+Release version 1.0.0
+```
+
+### Push Tags to GitHub
+```bash
+git push origin v1.0.0
+```
+
