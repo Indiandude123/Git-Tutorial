@@ -44,5 +44,5 @@ So i had two branches in total, both having a "helper.py" file. I changed the fi
 git merge branch_name -> this gives an option to choose on how to handle the conflict. 
 CONFLICT (content): Merge conflict in helper2.py
 Automatic merge failed; fix conflicts and then commit the result.
-And 
+Once chosen the way to handle the conflict, choose it and then commit the master againg
 
