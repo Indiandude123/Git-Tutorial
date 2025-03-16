@@ -1,48 +1,57 @@
-Git and GitHub
+# Git and GitHub
 
-- Git is a VCS(Version Control System) or a SCM(Source Code Manager)
-- version controlling, to collaborate, non linear development
+## Introduction
+Git is a **Version Control System (VCS)** or a **Source Code Manager (SCM)** that helps in tracking changes, collaborating with others, and managing non-linear development efficiently.
 
-Stages of Git
-- Workspace : Where you are currently working in your local directory. This is the stage where git has not started tracking the files yet. Untracked files
-- Staging area: Where the files become "tracked". You commit your files from here to store the files in the local repo
-- Local Repo: This is the local repository on your laptop. You can get back versions and all here 
-- Remote Repo 
+## Stages in Git
+1. **Workspace**: This is where you work in your local directory. Files here are untracked by Git until added to the staging area.
+2. **Staging Area**: The place where files are prepared for a commit. Files move from here to the local repository.
+3. **Local Repository**: A version-controlled repository on your local machine where you can track and revert to previous versions.
+4. **Remote Repository**: A repository hosted on platforms like GitHub, GitLab, or Bitbucket for collaboration and backup.
 
+## Essential Git Commands
 
-git log : shows you all the commits you have made 
+### Viewing Commit History
+- `git log` → Shows all the commits made in the repository.
+- `git log --oneline` → Displays commit history in a compact format (SHA ID + commit message). This is the most readable version.
+- `git log --stat` → Provides detailed commit history, including file changes.
+- `git log --oneline --all --graph` → Visual representation of the commit structure across branches.
 
-HEAD -> points to the most recent commit on your existing branch
+### Understanding Commits
+- **HEAD** → Points to the most recent commit on the current branch.
+- **SHA ID** → A unique identifier for each commit, allowing you to navigate between versions.
+- `git show <sha_id>` → Displays the code snapshot of a specific commit.
 
-sha id : the unique id for a commit. Using this sha id you can go back and forth in versions or even branch
+### Viewing Changes
+- `git diff` → Shows changes made in the staging area.
+  - `a/filename` → After changes
+  - `b/filename` → Before changes
 
-git log --oneline : gives the sha id and the commit message only. Tbh this is the most useful command because its easy to read
+### Branching & Navigating Versions
+- `git checkout <sha_id>` → Switch to a specific commit.
+- `git checkout master` → Return to the master/main branch.
+- `git branch` → Lists all branches, with an asterisk (*) indicating the current branch.
+- `git branch <branch_name> <sha_id>` → Creates a new branch from a specific commit.
+- `git branch -d <branch_name>` → Deletes a branch (only if merged with master/main).
+- `git branch -D <branch_name>` → Forcefully deletes a branch (even if not merged, but you must be on a different branch while deleting).
 
-git log --stat : gives you the whole history, including the file changes made basically all the details
+### Merging & Resolving Conflicts
+To merge a branch into the main branch:
+```sh
+ git merge <branch_name>
+```
+If both branches have modified the same part of a file, a **merge conflict** occurs:
 
-git show sha_id : will show how the code was looking like at that version.
+1. Git will display a conflict message:
+   ```
+   CONFLICT (content): Merge conflict in helper.py
+   Automatic merge failed; fix conflicts and then commit the result.
+   ```
+2. Manually resolve the conflict by choosing the appropriate changes.
+3. Stage and commit the resolved version:
+   ```sh
+   git add helper.py
+   git commit -m "Resolved merge conflict"
+   ```
 
-git diff : shows the changes made in the staging area
-a/filename is the after and b/filename is the before
-
-git checkout sha_id : takes you to that particular version.
-git checkout master: takes you back to your original master branch. In my case I hadn't branched so master took me back to whatever latest version i was working with.
-
-git branch branch_name sha_id : creates a branch from that particular commit
-
-git branch : shows the branch, the asterisk shows which branch you're on
-
-git log --oneline --all --graph : this shows the whole structure of the commits in the branch and the master in a graphical manner. Very useful 
-
-git branch -d branch_name : deletes the branch, but make sure your current HEAD is not on the branch you're deleting. So you'll have to come to the master branch to delete the branch. A thing to notice is this returns an error if this branch is not merged with the master
-
-git branch -D branch_name : deletes it anyway. Then again keep in mind that you'll have to be in the main branch to be able to do this operation.
-
-
-Merge conflicts:
-So i had two branches in total, both having a "helper.py" file. I changed the first line of the file in both these branches. Then i put the head on the master and tried to merge
-git merge branch_name -> this gives an option to choose on how to handle the conflict. 
-CONFLICT (content): Merge conflict in helper2.py
-Automatic merge failed; fix conflicts and then commit the result.
-Once chosen the way to handle the conflict, choose it and then commit the master againg
 
